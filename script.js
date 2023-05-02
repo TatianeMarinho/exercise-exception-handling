@@ -2,12 +2,12 @@ const value1 = document.getElementById('value1').value;
 const value2 = document.getElementById('value2').value;
 
 const validaValor = () => {
-  if(value1.length === 0 || value2.length === 0) {
+  if (value1.length === 0 || value2.length === 0) {
     throw new Error('Preencha os campos para realizar a soma');
   }
 };
 
-function calculateSum(value1, value2) {
+function calculateSum() {
   try {
     validaValor();
     const result = Number(value1) + Number(value2);
@@ -15,7 +15,7 @@ function calculateSum(value1, value2) {
   } catch (error) {
     return error.message;
   }
-};
+}
 
 function displayResult(result) {
   document.getElementById('result').innerHTML = `Resultado: ${result}`;
